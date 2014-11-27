@@ -1,0 +1,45 @@
+#Authentication information for the zoneminder database
+DB_HOST="localhost"
+DB_USER=""
+DB_PASSWD=""
+DB_NAME=""
+
+#Path to ZM Image files
+ZM_PATH = "/var/cache/zoneminder/events/"
+
+#Do not report alarms before this date/time. Update this before
+#first running the program to avoid getting many emails
+#from past alarms. Date/Time should be in standard mysql datetime format.
+IGNORE_BEFORE = "2014-11-14 00:00:00"
+
+#Alarm frames with a score below MIN_SCORE will not be emailed
+MIN_SCORE = "10"
+
+#Email address to send frames to/from.
+TO_EMAIL = 'user@example.com'
+FROM_EMAIL = 'user@example.com'
+EMAIL_SUBJECT = "Motion Detected"
+
+#Authentication information for SMTP server.
+SMTP_SERVER = "smtp.example.com"
+SMTP_PORT = 587
+
+#SMTP_LOGIN and SMTP_PASSWORD are optional. If set, the script will login
+#before sending the email.
+SMTP_LOGIN = ""
+SMTP_PASSWORD = ""
+
+#If this is a non-empty array, only these monitors
+#will trigger emails.
+#Example:
+#MONITOR_NAMES = ["WestDoor", "Backyard"]
+MONITOR_NAMES = []
+
+#How many frames to send at a time.
+#Default Value: "10"
+BATCH_SIZE = "10"
+
+#How long to sleep before looking for additional alarm frames
+#if none were found
+#Default Value: 5
+WAIT_TIME = 5
